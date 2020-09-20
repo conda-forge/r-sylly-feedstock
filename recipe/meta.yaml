@@ -1,4 +1,4 @@
-{% set version = '0.1-5' %}
+{% set version = "0.1-6" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/sylly_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/sylly/sylly_{{ version }}.tar.gz
-  sha256: 9de3690b2b6ac30b390bca41e8ebc21409b9905da2ecffbdd46c8a31f5ad8705
+  sha256: b5d601178384ac24c4bca752690ea30b0901673e4b92e449a87eba125a9a0338
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -36,19 +36,11 @@ test:
 about:
   home: https://reaktanz.de/?c=hacking&s=sylly
   license: GPL (>= 3)
-  summary: Provides the hyphenation algorithm used for 'TeX'/'LaTeX' and similar software, as
-    proposed by Liang (1983, <https://tug.org/docs/liang/>). Mainly contains the function
-    hyphen() to be used for hyphenation/syllable counting of text objects. It was originally
-    developed for and part of the 'koRpus' package, but later released as a separate
-    package so it's lighter to have this particular functionality available for other
-    packages. Support for various languages needs be added on-the-fly or by plugin packages
-    (<https://undocumeantit.github.io/repos>); this package does not include any language
-    specific data. Due to some restrictions on CRAN, the full package sources are only
-    available from the project homepage. To ask for help, report bugs, request features,
-    or discuss the development of the package, please subscribe to the koRpus-dev mailing
-    list (<http://korpusml.reaktanz.de>).
+  summary: Provides the hyphenation algorithm used for 'TeX'/'LaTeX' and similar software, as proposed by Liang (1983, <https://tug.org/docs/liang/>). Mainly contains the function hyphen() to be used for hyphenation/syllable counting of text objects. It was originally developed for and part of the 'koRpus' package, but later
+    released as a separate package so it's lighter to have this particular functionality available for other packages. Support for various languages needs be added on-the-fly or by plugin packages (<https://undocumeantit.github.io/repos>); this package does not include any language specific data. Due to some restrictions
+    on CRAN, the full package sources are only available from the project homepage. To ask for help, report bugs, request features, or discuss the development of the package, please subscribe to the koRpus-dev mailing list (<http://korpusml.reaktanz.de>).
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
