@@ -1,6 +1,5 @@
 {% set version = "0.1-6" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-sylly
@@ -13,8 +12,7 @@ source:
   sha256: b5d601178384ac24c4bca752690ea30b0901673e4b92e449a87eba125a9a0338
 
 build:
-  merge_build_host: true  # [win]
-  number: 2
+  number: 3
   noarch: generic
   rpaths:
     - lib/R/lib/
